@@ -1,0 +1,75 @@
+
+
+.event-container {
+    width: 90%;
+    max-width: 700px; /* Reduce width slightly */
+    padding: 15px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+
+}
+
+.event-title {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.event-description,
+.event-location,
+.event-date {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.event-date {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.delete-button,
+.update-button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s;
+    margin-right: 10px; /* Add space between buttons */
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Darker red */
+}
+
+.update-button {
+    background-color: #d8e61a; /* Green */
+}
+
+.update-button:hover {
+    background-color: #cbce1d; /* Darker green */
+}
+
+.create-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    display: block; /* Ensures it takes full width */
+    text-align: center; /* Center text */
+}
+
+.create-button:hover {
+    background-color: #45a049;
+}
