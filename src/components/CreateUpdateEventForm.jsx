@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 function EventCreateAndEditForm({ method }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [date, setDate] = useState("");
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("")
     const [location, setLocation] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -19,7 +20,8 @@ function EventCreateAndEditForm({ method }) {
                 .then((data) => {
                     setTitle(data.title);
                     setDescription(data.description);
-                    setDate(data.date.slice(0, 16)); // Reformat the date to 'YYYY-MM-DDTHH:MM'
+                    setStartDate(data.start_time.slice(0, 16)); 
+                    setEndDate(data.end_time.slice(0, 16)); // Reformat the date to 'YYYY-MM-DDTHH:MM'
                     setLocation(data.location);
                 })
                 .catch(error => console.error('Error fetching event:', error));
@@ -34,9 +36,9 @@ function EventCreateAndEditForm({ method }) {
             let resps;
 
             if (method === "create") {
-                resps = await api.post('/api/v1/events/', { title, description, date, location });
+                resps = await api.post('/api/v1/events/', { title, description, start_time: startDate,end_time:endDate, location });
             } else if (method === "update" && event_id) {
-                resps = await api.patch(`/api/v1/events/${event_id}/`, { title, description, date, location });
+                resps = await api.patch(`/api/v1/events/${event_id}/`, { title, description, start_time: startDate,end_time:endDate, location });
             }
 
             console.log(resps);
@@ -77,11 +79,20 @@ function EventCreateAndEditForm({ method }) {
                     />
                 </div>
                 <div>
-                    <label>Date</label>
+                    <label>Start Date</label>
                     <input
                         type="datetime-local"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        value={startDate}
+                        onChange={(e) => setStartDate(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>End Date</label>
+                    <input
+                        type="datetime-local"
+                        value={endDate}
+                        onChange={(e) => setEndDate(e.target.value)}
                         required
                     />
                 </div>

@@ -1,75 +1,124 @@
-
-
 .event-container {
-    width: 90%;
-    max-width: 700px; /* Reduce width slightly */
-    padding: 15px;
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
 
+.event-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
 }
 
 .event-title {
-    color: #333;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 2.5em; /* Larger font size for prominence */
+    font-weight: bold; /* Bold text for emphasis */
+    color: #222; /* Darker color for better readability */
+    margin: 0 0 15px 0; /* No margin on top, space below */
+    border-bottom: 3px solid #007bff; /* Blue underline to highlight */
+    padding-bottom: 10px; /* Space between text and underline */
 }
 
-.event-description,
-.event-location,
-.event-date {
-    color: #666;
-    margin-bottom: 10px;
+.event-organizer {
+    font-size: 18px; /* Slightly larger font size for emphasis */
+    color: #007bff; /* Blue color to match the design theme */
+    font-weight: bold; /* Bold text for emphasis */
+    margin: 5px 0 15px; /* Spacing around the organizer information */
 }
 
-.event-date {
-    color: #999;
-    font-size: 0.8rem;
+.event-content, .event-location, .event-date {
+    margin: 5px 0 15px;
+    font-size: 16px;
+    color: #555;
 }
 
-.delete-button,
-.update-button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.3s;
-    margin-right: 10px; /* Add space between buttons */
-}
-
+/* Delete Button */
 .delete-button {
-    background-color: #f44336; /* Red */
+    background: linear-gradient(135deg, #dc3545, #c82333); /* Red gradient background */
+    color: white; /* White text color */
 }
 
 .delete-button:hover {
-    background-color: #d32f2f; /* Darker red */
+    background: linear-gradient(135deg, #c82333, #ab1e2c); /* Darker red gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* Update Button */
 .update-button {
-    background-color: #d8e61a; /* Green */
+    background: linear-gradient(135deg, #007bff, #0056b3); /* Blue gradient background */
+    color: white; /* White text color */
 }
 
 .update-button:hover {
-    background-color: #cbce1d; /* Darker green */
+    background: linear-gradient(135deg, #0056b3, #003d7a); /* Darker blue gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
-.create-button {
-    background-color: #4CAF50; /* Green */
+/* Join Button */
+.join-button {
+    background: linear-gradient(135deg, #28a745, #1e7e34); /* Green gradient background */
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
     border: none;
+    border-radius: 6px; /* Consistent border radius */
+    padding: 12px 24px; /* Consistent padding with other buttons */
+    font-size: 16px; /* Consistent font size */
     cursor: pointer;
-    margin-bottom: 20px;
-    transition: background-color 0.3s;
-    display: block; /* Ensures it takes full width */
-    text-align: center; /* Center text */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-top: 10px; /* Consistent spacing above the button */
 }
 
-.create-button:hover {
-    background-color: #45a049;
+.join-button:hover {
+    background: linear-gradient(135deg, #1e7e34, #155d27); /* Darker green gradient on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.join-button:active {
+    background: linear-gradient(135deg, #155d27, #0a3e1b); /* Even darker green on click */
+    
+}
+
+.join-button:disabled {
+    background: linear-gradient(135deg, #6c757d, #5a6268); /* Gray gradient background when disabled */
+    cursor: not-allowed; /* Change cursor to not-allowed when disabled */
+}
+.participants-section {
+    margin-top: 20px;
+}
+
+.participants-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.participants-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.participant-item {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.participant-item:last-child {
+    border-bottom: none;
+}
+
+/* Optional: Add styles for empty state */
+.participants-list li {
+    font-style: italic;
+    color: #888;
 }

@@ -68,30 +68,40 @@ div {
   }
 
 
-  .create-button {
-    background-color: #5be61a; /* green */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .create-button:hover {
-    background-color: #1dce2c; /* Darker green */
-  }
+  /* Create Button */
+.create-button {
+  background: linear-gradient(135deg, #5be61a, #4caf50); /* Gradient green background */
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Slightly increased padding for a larger button */
+  border-radius: 6px; /* Slightly larger border radius for more rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-size: 16px; /* Larger font size for better readability */
+}
 
-  .button {
-    background-color: #1a83e6; /* green */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #1d38ce; /* Darker green */
-  }
+.create-button:hover {
+  background: linear-gradient(135deg, #4caf50, #1dce2c); /* Darker green gradient on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* General Button */
+.button {
+  background: linear-gradient(135deg, #1a83e6, #007bff); /* Gradient blue background */
+  color: white;
+  border: none;
+  padding: 12px 24px; /* Consistent padding with the create-button */
+  border-radius: 6px; /* Consistent border radius */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-size: 16px; /* Consistent font size */
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Darker blue gradient on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}

@@ -34,6 +34,17 @@ function Home() {
             })
     }
 
+    const onJoin = (event_id)=>{
+        api.post(`/api/v1/events/${event_id}/participants/`)
+        .then((res) => res.data)
+        .then((data)=> {
+            console.log(data)
+            getEvents();
+        })
+        .catch((err)=> console.error(err));
+
+    }
+
     return (
         <>
             <Navbar/>
@@ -46,7 +57,7 @@ function Home() {
                 </button>
             </a>
             <div>
-                {eventsList.map((data) => <EventList key={data.id} event={data} onDelete={onDelete} />)}
+                {eventsList.map((data) => <EventList key={data.id} event={data} onDelete={onDelete} onJoin={onJoin} />)}
             </div>
         </>
     )
